@@ -18,6 +18,12 @@ Route::get('/', function () {
     return view('layouts.app');
 });
 
+Route::middleware('student')->group(function () {
+    Route::get('/test', function () {
+        return view('test');
+    });
+});
+
 Route::get('/breeze', function () {
     return view('welcome');
 });

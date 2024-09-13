@@ -3,7 +3,7 @@
         <div class="sidebar sidebar-dark-pickled-bluewood sidebar-left sidebar-p-t" data-perfect-scrollbar>
             <div class="tab-pane "
                     id="sm_student">
-                @if(Auth::user()->role == 'student')
+                @if(Auth::user()?->role == 'student')
                     <div class="sidebar-heading">الطالب</div>
                     <ul class="sidebar-menu">
                         <li class="sidebar-menu-item {{ Request::is('/') ? 'active' : '' }}">
@@ -25,7 +25,7 @@
                             </a>
                         </li>
                     </ul>
-                @elseif(Auth::user()->role == 'teacher')
+                @elseif(Auth::user()?->role == 'teacher')
                     <div class="sidebar-heading">المعلم</div>
                     <ul class="sidebar-menu">
                         <li class="sidebar-menu-item {{ Request::is('/') ? 'active' : '' }}">
@@ -35,7 +35,7 @@
                             </a>
                         </li>
                     </ul>
-                @elseif(Auth::user()->role == 'admin')
+                @elseif(Auth::user()?->role == 'admin')
                     <div class="sidebar-heading">المدير</div>
                     <ul class="sidebar-menu">
                         <li class="sidebar-menu-item {{ Request::is('/') ? 'active' : '' }}">
