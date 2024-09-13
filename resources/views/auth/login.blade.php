@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.app')
 
 @section('content')
 
@@ -7,20 +7,21 @@
         <form method="POST" action="{{ route('login') }}"
               class="col-md-5 p-0 mx-auto">
               @csrf
-              @method('POST')
             <div class="form-group">
                 <label class="form-label"
-                       for="email">إيميل:</label>
+                       for="email">البريد الالكتروني:</label>
                 <input id="email"
-                       type="text"
+                       name="email"
+                       type="email"
                        class="form-control"
-                       placeholder="اكتب ايميلك هنا"
+                       placeholder="اكتب البريد الالكتروني هنا"
                        value="{{ old('email') }}">
             </div>
             <div class="form-group">
                 <label class="form-label"
                        for="password" lang="ar">كلمة المرور:</label>
                 <input id="password"
+                       name="password"
                        type="password"
                        class="form-control"
                        placeholder="اكتب كلمة المرور هنا"

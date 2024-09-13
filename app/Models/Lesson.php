@@ -15,7 +15,22 @@ class Lesson extends Model
         'file',
         'image',
         'course_id',
+        'video',
     ];
-    
+
+    public function course()
+    {
+        return $this->belongsTo(Course::class);
+    }
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
+
+    public function homework()
+    {
+        return $this->belongsTo(Homework::class , 'homework_id');
+    }
     
 }

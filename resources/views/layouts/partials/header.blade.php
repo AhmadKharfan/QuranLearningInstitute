@@ -78,8 +78,10 @@ data-fixed>
 
                         <span class="avatar avatar-sm mr-8pt2">
 
-                            <span class="avatar-title rounded-circle bg-primary"><i class="material-icons">account_box</i></span>
-
+                            <span class="avatar-title rounded-circle bg-primary">
+                                <img src="{{ asset('images/users/'.Auth::user()->image) }}" alt="avatar" style="width: 56px; height: 56px; border-radius: 50%;">
+                            </span>
+                            
                         </span>
 
                     </a>
@@ -87,8 +89,15 @@ data-fixed>
                         <div class="dropdown-header"><strong>الحساب</strong></div>
                         <a class="dropdown-item"
                             href="edit-account.html">تعديل الحساب</a>
-                        <a class="dropdown-item"
-                            href="login.html">تسجيل الخروج</a>
+                        
+
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <a class="dropdown-item"
+                                    href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                    this.closest('form').submit();">تسجيل الخروج</a>
+                            </form>
                     </div>
                 </div>
             </div>

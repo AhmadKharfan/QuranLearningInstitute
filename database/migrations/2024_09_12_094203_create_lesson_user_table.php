@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('lesson_user', function (Blueprint $table) {
             $table->id();
             $table->foreignId('lesson_id')->constrained('lessons')->cascadeOnDelete();
+            $table->enum('status' , ['attended' , 'not_attended'])->default('not_attended');
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
             $table->timestamps();
         });

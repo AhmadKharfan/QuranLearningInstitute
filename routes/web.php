@@ -15,11 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('layout');
-});
-
-Route::get('/test', function () {
-    return view('test');
+    return view('layouts.app');
 });
 
 Route::get('/breeze', function () {
